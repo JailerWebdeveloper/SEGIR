@@ -5,6 +5,8 @@ import ProfileSection from '../components/ProfileSection';
 import IntroSection from '../components/IntroSection';
 import ServiceSection from '../components/ServicesSection';
 import { CoverageSection } from '../components/CoverageSection';
+import GallerySection from '../components/GallerySection';
+import ContactSection from '../components/ContactSection';
 
 const Home = () => {
 
@@ -12,38 +14,38 @@ const Home = () => {
 
     return (
         <div className="min-h-screen  pt-16 w-full">
-            <section className="relative h-[90vh] overflow-hidden">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    className="absolute w-full h-full object-cover"
-                    poster="https://i.pinimg.com/736x/b8/48/95/b848952604e015911a9607775f4786ce.jpg"
-                >
-                    <source src="https://www.youtube.com/watch?v=GOQ146WRBzA&t=2214s" type="video/mp4" />
-                    Tu navegador no soporta el elemento de video.
-                </video>
-                <div className="absolute inset-0 bg-black bg-opacity-60">
-                    <div className="container mx-auto h-full flex items-center justify-center px-4">
-                        <motion.div
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-center text-white max-w-3xl"
-                        >
-                            <h1 className="text-5xl font-bold mb-6">SEGIR</h1>
-                            <p className="text-xl mb-8">Proteger vidas y fortalecer entornos laborales a través de soluciones integrales en seguridad y gestión del riesgo.</p>
-                            <button className="btn btn-primary btn-lg">Comenzar Ahora</button>
-                        </motion.div>
-                    </div>
+            <section
+                className="relative h-full w-full bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/segir-f5f19.firebasestorage.app/o/Imagen%20de%20WhatsApp%202025-01-29%20a%20las%2015.37.23_74ec54c2.jpg?alt=media&token=cfb841c4-8bb9-4849-a5ed-39ff9bc15886')"
+                }}
+            >
+                <div className="absolute inset-0 bg-black/60"></div>
+
+                <div className="absolute inset-0 flex items-center justify-center px-4">
+                    <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-center text-white max-w-3xl"
+                    >
+                        <h1 className="text-5xl font-bold mb-6">SEGIR</h1>
+                        <p className="text-xl mb-8">
+                            Proteger vidas y fortalecer entornos laborales a través de soluciones integrales en seguridad y gestión del riesgo.
+                        </p>
+                        <button className="btn btn-primary btn-lg">Comenzar Ahora</button>
+                    </motion.div>
                 </div>
             </section>
+
             <IntroSection />
             <ProfileSection />
             <ServiceSection />
+            <GallerySection />
             <CoverageSection />
+            <ContactSection />
             {/* CTA Section */}
-            <motion.section
+            {/* <motion.section
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -57,7 +59,7 @@ const Home = () => {
                     </p>
                     <button className="btn btn-secondary btn-lg">Solicitar Consulta</button>
                 </div>
-            </motion.section>
+            </motion.section> */}
         </div>
     );
 };
